@@ -10,10 +10,16 @@ import UIKit
 
 class recommendViewController: UIViewController {
 
+    
+    @IBOutlet weak var nagoyaList: UITableView!
+    @IBOutlet weak var pushBtnRe: UIButton!
     @IBOutlet weak var recommendMapView: MKMapView!
+    var openFlag = true
+    var tea_list = ["ダージリン","アールグレイ","アッサム","オレンジペコ"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let coordinate = CLLocationCoordinate2DMake(35.170915,136.881537 )
+        let coordinate = CLLocationCoordinate2DMake(35.25271,35.25271 )
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegionMake(coordinate, span)
         recommendMapView.setRegion(region, animated:true)
@@ -24,7 +30,10 @@ class recommendViewController: UIViewController {
         annotation.subtitle = "subtitle"
         self.recommendMapView.addAnnotation(annotation)
     }
-    
+    override func viewWillAppear(animated: Bool) {
+        self.nagoyaList.hidden = true
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -81,7 +90,49 @@ class recommendViewController: UIViewController {
     @IBAction func didReturnToMapViewController(segue: UIStoryboardSegue) {
         print(__FUNCTION__)
     }
+    @IBAction func tapPushre(sender: UIButton) {
+            if (self.openFlag){
+                self.recommendMapView.hidden = true
+                self.nagoyaList.hidden = false
+                openFlag = false
+            }else{
+                self.recommendMapView.hidden = false
+                self.nagoyaList.hidden = true
+                openFlag = true
+                print("nemui")
+        }
+        
+    }
+    func tableView(tableView :UITableView, numberOfRowsInSection section: Int) ->Int{
+        return tea_list.count
+        
+    }
+    //    表示するセルの中身
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->
+        UITableViewCell{
+            var cell = UITableViewCell(style: .Default, reuseIdentifier: "myCell")
+            cell.textLabel?.text = "\(indexPath.row)行目"
+            
+            
+            cell.textLabel!.text = "\(tea_list[indexPath.row])"
+            
+            cell.textLabel?.textColor = UIColor.greenColor()
+            
+            cell.textLabel!.font = UIFont.systemFontOfSize(20)
+            cell.accessoryType =  .DisclosureIndicator
+            
+            
+            return cell
+            
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath!){
+        print("\(indexPath.row)行目を選択")
+//        selectedIndex = indexPath.row
+       
+    }
+    
 }
+
 
 
         
@@ -90,31 +141,5 @@ class recommendViewController: UIViewController {
         
         
        
-//        let coodinate = CLLocationCoordinate2DMake(35.225748, 36.884252)
-//        
-//        
-//        //        縮尺を設定
-//        let span = MKCoordinateSpanMake(0.05,0.05)
-//        
-//        //        範囲オブジェクトを作成
-//        let region = MKCoordinateRegionMake(coodinate,span)
-//        
-//        //        mapViewに設定
-//        recommendMapView.setRegion(region, animated: true)
-        
-        
-        
-
-
-        
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 

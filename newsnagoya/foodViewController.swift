@@ -10,8 +10,14 @@ import UIKit
 import MapKit
 
 class foodViewController: UIViewController {
-
+    
+    @IBOutlet weak var foodList: UITableView!
+    @IBOutlet weak var pushBtn: UIButton!
     @IBOutlet weak var foodMapView: MKMapView!
+    var openFlag = true
+    var tea_list = ["ダージリン","アールグレイ","アッサム","オレンジペコ"]
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let coordinate = CLLocationCoordinate2DMake(35.170915,136.881537 )
@@ -24,8 +30,12 @@ class foodViewController: UIViewController {
         annotation.title = "title"
         annotation.subtitle = "subtitle"
         self.foodMapView.addAnnotation(annotation)
-    }
+        
     
+    }
+    override func viewWillAppear(animated: Bool) {
+        self.foodList.hidden = true
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -82,50 +92,51 @@ class foodViewController: UIViewController {
     @IBAction func didReturnToMapViewController(segue: UIStoryboardSegue) {
         print(__FUNCTION__)
     }
-}
-        
- 
-        
-        
-//        var pin = MKPointAnnotation()
-//        pin.coordinate  = coordinate
-//        
-//        self.storeMap.addAnnotation(pin)
-//        let coodinate = CLLocationCoordinate2DMake(35.170915, 136.881537)
-//        
-//        
-//        //        縮尺を設定
-//        let span = MKCoordinateSpanMake(0.05,0.05)
-//        
-//        //        範囲オブジェクトを作成
-//        let region = MKCoordinateRegionMake(coodinate,span)
-//        
-//        //        mapViewに設定
-//        foodMapView.setRegion(region, animated: true)
-//        
-//        
-//        
-//        
-//        
-//
-//
-//        
-//    }
-//
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//        // Dispose of any resources that can be recreated.
-//    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func tapBtnMap(sender: UIButton) {
     }
-    */
-
-
+    
+    @IBAction func tapPush(sender: UIButton){
+        if (self.openFlag){
+            self.foodMapView.hidden = true
+            self.foodList.hidden = false
+            
+            openFlag = false
+        }else{
+            // 表示されている
+            self.foodMapView.hidden = false
+            self.foodList.hidden = true
+            openFlag = true
+            print("疲れました")
+            
+        }
+    }
+    func tableView(tableView :UITableView, numberOfRowsInSection section: Int) ->Int{
+        return tea_list.count
+        
+    }
+    //    表示するセルの中身
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->
+    UITableViewCell{
+    var cell = UITableViewCell(style: .Default, reuseIdentifier: "myCell")
+    cell.textLabel?.text = "\(indexPath.row)行目"
+    
+    
+    cell.textLabel!.text = "\(tea_list[indexPath.row])"
+    
+    cell.textLabel?.textColor = UIColor.greenColor()
+    
+    cell.textLabel!.font = UIFont.systemFontOfSize(20)
+    cell.accessoryType =  .DisclosureIndicator
+    
+    
+    return cell
+    
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath!){
+        print("\(indexPath.row)行目を選択")
+        //        selectedIndex = indexPath.row
+        
+    }
+    
+}
