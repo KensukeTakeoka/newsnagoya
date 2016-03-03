@@ -8,9 +8,9 @@
 			<key>genre</key>
 			<string>イベント</string>
 			<key>name</key>
-			<string>名前</string>
+			<string>イベント名１</string>
 			<key>recommend</key>
-			<string></string>
+			<string>☆☆</string>
 			<key>address</key>
 			<string>住所</string>
 			<key>longitude</key>
@@ -30,9 +30,9 @@
 			<key>genre</key>
 			<string>ショップ</string>
 			<key>name</key>
-			<string>名前</string>
+			<string>名前２３</string>
 			<key>recommend</key>
-			<string></string>
+			<string>☆☆☆</string>
 			<key>address</key>
 			<string>住所</string>
 			<key>longitude</key>
@@ -52,9 +52,9 @@
 			<key>genre</key>
 			<string>フェスティバル</string>
 			<key>name</key>
-			<string>名前</string>
+			<string>名前７７７７</string>
 			<key>recommend</key>
-			<string></string>
+			<string>☆☆☆☆</string>
 			<key>address</key>
 			<string>住所</string>
 			<key>longitude</key>

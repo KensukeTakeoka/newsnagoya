@@ -15,6 +15,10 @@
 		D27A3FC31C81CCB0006B4A52 /* gourmet.plist in Resources */ = {isa = PBXBuildFile; fileRef = D27A3FC21C81CCB0006B4A52 /* gourmet.plist */; settings = {ASSET_TAGS = (); }; };
 		D27A3FC51C81CCC2006B4A52 /* recommend.plist in Resources */ = {isa = PBXBuildFile; fileRef = D27A3FC41C81CCC2006B4A52 /* recommend.plist */; settings = {ASSET_TAGS = (); }; };
 		D27A3FC71C843EFC006B4A52 /* secondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27A3FC61C843EFC006B4A52 /* secondViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D28B7DC31C86CE1500114371 /* showRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B7DC21C86CE1500114371 /* showRestaurantViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D28B7DC51C86CE3F00114371 /* showEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B7DC41C86CE3F00114371 /* showEventViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D28B7DC71C86CEA300114371 /* articleMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B7DC61C86CEA300114371 /* articleMemoViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D28B7DC91C86CED100114371 /* yummyMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B7DC81C86CED100114371 /* yummyMemoViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D2F54BC71C7FEC1300CE9C8F /* foodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F54BC61C7FEC1300CE9C8F /* foodViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D2F54BC91C7FEC3200CE9C8F /* recommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F54BC81C7FEC3200CE9C8F /* recommendViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -30,6 +34,10 @@
 		D27A3FC21C81CCB0006B4A52 /* gourmet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gourmet.plist; sourceTree = "<group>"; };
 		D27A3FC41C81CCC2006B4A52 /* recommend.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = recommend.plist; sourceTree = "<group>"; };
 		D27A3FC61C843EFC006B4A52 /* secondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secondViewController.swift; sourceTree = "<group>"; };
+		D28B7DC21C86CE1500114371 /* showRestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showRestaurantViewController.swift; sourceTree = "<group>"; };
+		D28B7DC41C86CE3F00114371 /* showEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showEventViewController.swift; sourceTree = "<group>"; };
+		D28B7DC61C86CEA300114371 /* articleMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = articleMemoViewController.swift; sourceTree = "<group>"; };
+		D28B7DC81C86CED100114371 /* yummyMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yummyMemoViewController.swift; sourceTree = "<group>"; };
 		D2F54BC61C7FEC1300CE9C8F /* foodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = foodViewController.swift; sourceTree = "<group>"; };
 		D2F54BC81C7FEC3200CE9C8F /* recommendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recommendViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +75,10 @@
 				D20B75571C7C0442007F600A /* AppDelegate.swift */,
 				D20B75591C7C0442007F600A /* ViewController.swift */,
 				D27A3FC61C843EFC006B4A52 /* secondViewController.swift */,
+				D28B7DC21C86CE1500114371 /* showRestaurantViewController.swift */,
+				D28B7DC61C86CEA300114371 /* articleMemoViewController.swift */,
+				D28B7DC81C86CED100114371 /* yummyMemoViewController.swift */,
+				D28B7DC41C86CE3F00114371 /* showEventViewController.swift */,
 				D27A3FC41C81CCC2006B4A52 /* recommend.plist */,
 				D27A3FC21C81CCB0006B4A52 /* gourmet.plist */,
 				D2F54BC81C7FEC3200CE9C8F /* recommendViewController.swift */,
@@ -152,8 +164,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D28B7DC51C86CE3F00114371 /* showEventViewController.swift in Sources */,
+				D28B7DC31C86CE1500114371 /* showRestaurantViewController.swift in Sources */,
 				D2F54BC71C7FEC1300CE9C8F /* foodViewController.swift in Sources */,
+				D28B7DC71C86CEA300114371 /* articleMemoViewController.swift in Sources */,
 				D2F54BC91C7FEC3200CE9C8F /* recommendViewController.swift in Sources */,
+				D28B7DC91C86CED100114371 /* yummyMemoViewController.swift in Sources */,
 				D20B755A1C7C0442007F600A /* ViewController.swift in Sources */,
 				D27A3FC71C843EFC006B4A52 /* secondViewController.swift in Sources */,
 				D20B75581C7C0442007F600A /* AppDelegate.swift in Sources */,

@@ -26,6 +26,7 @@
                                 <state key="normal" title="push"/>
                                 <connections>
                                     <action selector="tapPushre:" destination="HoH-Hf-ZyX" eventType="touchUpInside" id="ene-CJ-5P5"/>
+                                    <segue destination="ZAj-GL-fAM" kind="show" id="hx6-8n-ubk"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9cT-qh-UXk">
@@ -43,6 +44,11 @@
                                     <outlet property="delegate" destination="HoH-Hf-ZyX" id="qY7-gl-51F"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayS-fP-YyK">
+                                <rect key="frame" x="20" y="27" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,6 +63,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rye-a7-sjv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="193.5" y="962.5"/>
+        </scene>
+        <!--Show Event View Controller-->
+        <scene sceneID="KUh-8w-oWV">
+            <objects>
+                <viewController id="ZAj-GL-fAM" customClass="showEventViewController" customModule="newsnagoya" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="17b-es-6V7"/>
+                        <viewControllerLayoutGuide type="bottom" id="EjO-67-9zA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eA9-AX-Pg6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftR-8g-iPv">
+                                <rect key="frame" x="298" y="28" width="43" height="30"/>
+                                <animations/>
+                                <state key="normal" title="memo"/>
+                                <connections>
+                                    <segue destination="1Hg-Wa-I5T" kind="show" id="ehf-Xl-N4a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZm-zm-zID">
+                                <rect key="frame" x="28" y="28" width="30" height="30"/>
+                                <animations/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <segue destination="HoH-Hf-ZyX" kind="show" id="Mqq-Ry-7vO"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f5S-Ac-TEI">
+                                <rect key="frame" x="0.0" y="66" width="375" height="260"/>
+                                <animations/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="HP" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vtf-yx-grT">
+                                <rect key="frame" x="0.0" y="495" width="375" height="172"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="オススメ理由" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BOf-OV-4Ae">
+                                <rect key="frame" x="0.0" y="339" width="375" height="128"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="foq-9G-nQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="657.5" y="962.5"/>
+        </scene>
+        <!--Article Memo View Controller-->
+        <scene sceneID="UR4-Dd-O3X">
+            <objects>
+                <viewController id="1Hg-Wa-I5T" customClass="articleMemoViewController" customModule="newsnagoya" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VtN-Ci-dk0"/>
+                        <viewControllerLayoutGuide type="bottom" id="Eps-xo-sqv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GfR-g3-fBS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9em-lI-XzS">
+                                <rect key="frame" x="40" y="20" width="30" height="30"/>
+                                <animations/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <segue destination="ZAj-GL-fAM" kind="show" id="sfW-q0-WSV"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="MEMO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ltT-Iq-7EM">
+                                <rect key="frame" x="0.0" y="58" width="375" height="285"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y5B-BT-RWA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1158.5" y="962.5"/>
         </scene>
         <!--Food View Controller-->
         <scene sceneID="d8a-CJ-OLZ">
@@ -83,7 +179,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tMN-1K-Rv5">
-                                <rect key="frame" x="0.0" y="78" width="366" height="540"/>
+                                <rect key="frame" x="0.0" y="78" width="375" height="540"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -91,6 +187,11 @@
                                     <outlet property="delegate" destination="JqE-Sl-HOq" id="1Md-Ue-XlO"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAI-Pn-cZo">
+                                <rect key="frame" x="20" y="28" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -104,7 +205,106 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GgG-Xn-4Bo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-142.5" y="49.5"/>
+            <point key="canvasLocation" x="-134.5" y="34.5"/>
+        </scene>
+        <!--Show Restaurant View Controller-->
+        <scene sceneID="bUL-95-WGC">
+            <objects>
+                <viewController id="CC6-q2-74i" customClass="showRestaurantViewController" customModule="newsnagoya" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fdv-su-uyu"/>
+                        <viewControllerLayoutGuide type="bottom" id="H6B-Kt-heL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dHl-g1-9xs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CrT-ok-mim">
+                                <rect key="frame" x="300" y="20" width="43" height="30"/>
+                                <animations/>
+                                <state key="normal" title="memo"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyD-c7-XDT">
+                                <rect key="frame" x="20" y="20" width="30" height="30"/>
+                                <animations/>
+                                <state key="normal" title="戻る"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OwH-HE-zbi">
+                                <rect key="frame" x="0.0" y="61" width="375" height="260"/>
+                                <animations/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="店名" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xNQ-iy-pVl">
+                                <rect key="frame" x="0.0" y="321" width="375" height="43"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="住所" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kxV-CE-xxs">
+                                <rect key="frame" x="0.0" y="372" width="375" height="94"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="営業時間・休日" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AXO-EZ-AP7">
+                                <rect key="frame" x="0.0" y="539" width="375" height="61"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="電話番号" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="M26-19-zmB">
+                                <rect key="frame" x="0.0" y="450" width="375" height="92"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="HP" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ0-z4-VJg">
+                                <rect key="frame" x="0.0" y="608" width="375" height="59"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0tD-R3-5R4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="376.5" y="34.5"/>
+        </scene>
+        <!--Yummy Memo View Controller-->
+        <scene sceneID="Ffl-jg-W20">
+            <objects>
+                <viewController id="AhM-6w-vwQ" customClass="yummyMemoViewController" customModule="newsnagoya" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="alP-TA-tIa"/>
+                        <viewControllerLayoutGuide type="bottom" id="a9X-00-DmA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bhW-S0-sjO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3m-he-ujF">
+                                <rect key="frame" x="28" y="20" width="30" height="30"/>
+                                <animations/>
+                                <state key="normal" title="戻る"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="MEMO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bAK-N1-zAK">
+                                <rect key="frame" x="5" y="67" width="370" height="303"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bPq-nS-zsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922.5" y="34.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Obi-YV-0Iw">
@@ -213,4 +413,8 @@
             <point key="canvasLocation" x="376.5" y="2054.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="sfW-q0-WSV"/>
+        <segue reference="Mqq-Ry-7vO"/>
+    </inferredMetricsTieBreakers>
 </document>

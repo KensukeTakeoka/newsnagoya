@@ -16,10 +16,29 @@ class foodViewController: UIViewController {
     @IBOutlet weak var foodMapView: MKMapView!
     var openFlag = true
     var tea_list = ["ダージリン","アールグレイ","アッサム","オレンジペコ"]
+    var ngyfood:[NSString] = []
+    var dic:NSDictionary?
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //ファイルのパスを取得
+        var filePath = NSBundle.mainBundle().pathForResource("gourmet", ofType: "plist")
+        
+        //ファイルの内容を読み込んでディクショナリー型に代入
+        self.dic = NSDictionary(contentsOfFile: filePath!)
+        var ngy:[NSDictionary] = []
+        
+        //TableViewで扱いやすい形（エリア名の入ってる配列）を作成
+        for(key,data) in dic!{
+            ngy = data as! NSArray as! [NSDictionary]
+        }
+        for(data) in ngy{
+            //            値を一個ずつ入れる　append
+            ngyfood.append(data["storename"] as! String)
+            print(ngyfood)
+        }
+
         let coordinate = CLLocationCoordinate2DMake(35.170915,136.881537 )
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegionMake(coordinate, span)
@@ -35,6 +54,7 @@ class foodViewController: UIViewController {
     }
     override func viewWillAppear(animated: Bool) {
         self.foodList.hidden = true
+        print(self.dic)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -112,26 +132,29 @@ class foodViewController: UIViewController {
         }
     }
     func tableView(tableView :UITableView, numberOfRowsInSection section: Int) ->Int{
-        return tea_list.count
+        return ngyfood.count
         
     }
     //    表示するセルの中身
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->
-    UITableViewCell{
-    var cell = UITableViewCell(style: .Default, reuseIdentifier: "myCell")
-    cell.textLabel?.text = "\(indexPath.row)行目"
-    
-    
-    cell.textLabel!.text = "\(tea_list[indexPath.row])"
-    
-    cell.textLabel?.textColor = UIColor.greenColor()
-    
-    cell.textLabel!.font = UIFont.systemFontOfSize(20)
-    cell.accessoryType =  .DisclosureIndicator
-    
-    
-    return cell
-    
+        UITableViewCell{
+            var nagoyafood = ngyfood[indexPath.row]
+            var cell = UITableViewCell(style: .Default, reuseIdentifier: "myCell")
+            // cell.textLabel?.text = "\(indexPath.row)行目"
+            
+            
+            //cell.textLabel!.text = "\(tea_list[indexPath.row])"
+            cell.textLabel!.text = "\(nagoyafood)"
+            
+            
+            cell.textLabel?.textColor = UIColor.greenColor()
+            
+            cell.textLabel!.font = UIFont.systemFontOfSize(20)
+            cell.accessoryType =  .DisclosureIndicator
+            
+            
+            return cell
+            
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath!){
         print("\(indexPath.row)行目を選択")
