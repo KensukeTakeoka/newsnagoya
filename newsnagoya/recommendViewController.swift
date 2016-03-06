@@ -19,6 +19,7 @@ class recommendViewController: UIViewController {
     
     var recommend:[NSString] = []
     var dic:NSDictionary?
+    var selectedIndex = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -151,21 +152,23 @@ class recommendViewController: UIViewController {
             return cell
             
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath!){
+    // 選択された時に行う処理
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("\(indexPath.row)行目を選択")
-//        selectedIndex = indexPath.row
-       
+        selectedIndex = indexPath.row
+        performSegueWithIdentifier("showSecondView",sender: nil)
     }
     
+    // Segueで画面遷移する時
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var secondVC = segue.destinationViewController as! showEventViewController
+        
+        secondVC.scSelectedIndex = selectedIndex
+        func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath!){
+            print("\(indexPath.row)行目を選択")
+            //        selectedIndex = indexPath.row
+            
+        }
+        
+    }
 }
-
-
-
-        
-        
-        
-        
-        
-       
-
-

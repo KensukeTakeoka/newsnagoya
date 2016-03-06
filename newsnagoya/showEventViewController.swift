@@ -9,6 +9,7 @@
 import UIKit
 
 class showEventViewController: UIViewController {
+    var scSelectedIndex = 3
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -18,6 +18,7 @@ class foodViewController: UIViewController {
     var tea_list = ["ダージリン","アールグレイ","アッサム","オレンジペコ"]
     var ngyfood:[NSString] = []
     var dic:NSDictionary?
+    var selectedIndex = -1
 
     
     override func viewDidLoad() {
@@ -139,7 +140,7 @@ class foodViewController: UIViewController {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->
         UITableViewCell{
             var nagoyafood = ngyfood[indexPath.row]
-            var cell = UITableViewCell(style: .Default, reuseIdentifier: "myCell")
+            var cell = UITableViewCell(style: .Default, reuseIdentifier: "myCellfood")
             // cell.textLabel?.text = "\(indexPath.row)行目"
             
             
@@ -156,10 +157,24 @@ class foodViewController: UIViewController {
             return cell
             
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath!){
+    // 選択された時に行う処理
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("\(indexPath.row)行目を選択")
-        //        selectedIndex = indexPath.row
-        
+        selectedIndex = indexPath.row
+        //performSegueWithIdentifier("showSecondView",sender: nil)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("segue")
+    }
+    
+//    // Segueで画面遷移する時
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        var secondVC = segue.destinationViewController as!showRestaurantViewController
+//        
+//        secondVC.scSelectedIndex = selectedIndex
+//    }
+    
+    
 }
+    

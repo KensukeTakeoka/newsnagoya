@@ -9,6 +9,7 @@
 import UIKit
 
 class showRestaurantViewController: UIViewController {
+    var scSelectedIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()

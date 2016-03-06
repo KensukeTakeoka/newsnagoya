@@ -9,7 +9,7 @@
 import UIKit
 
 class secondViewController: UIViewController {
-
+    var scSelectedIndex = 3
     override func viewDidLoad() {
         super.viewDidLoad()
 
